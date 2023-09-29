@@ -8,24 +8,23 @@ export const Header = () => {
   const escapedUrl = path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const regex = new RegExp(`^${escapedUrl}$`)
 
-
   const options = [
     {
       title: '_hello',
       link: '/',
+      reference: '/#'
     },
     {
       title: '_about-me',
-      link: '/about/bio',
+      link: '/about',
+      reference: 'about'
     },
     {
       title: '_projects',
       link: '/projects',
+      reference: 'projects'
     },
   ]
-
-  const isOnSpecificPage = options.some((option) => option.link === path)
-  console.log('isOnSpecificPage', isOnSpecificPage)
 
   return (
     <div className='w-full h-14 flex flex-row
@@ -38,7 +37,7 @@ export const Header = () => {
           className='py-[17px] px-[31px] even:border-l even:border-r border-primary-100
           hover:text-secondary-200 transition-colors ease-in-out duration-200 
           aria-[current="true"]:border-b-2 aria-[current="true"]:border-b-accent-100'
-          aria-current={regex.test(option.link)}
+          aria-current={regex.test(option.link) || path.indexOf(option.reference) !== -1}
         >
           {option.title}
         </Link>
