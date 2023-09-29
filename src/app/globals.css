@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.shiki-theme > pre {
+.shiki-theme > pre, .shiki-theme-home > pre {
   background-color: transparent !important;
 }
 
@@ -11,7 +11,7 @@ code {
   counter-increment: step 0;
 }
 
-code .line::before {
+.shiki-theme code .line::before {
   content: counter(step);
   counter-increment: step;
   width: 1rem;

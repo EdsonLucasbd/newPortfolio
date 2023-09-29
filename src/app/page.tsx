@@ -25,7 +25,11 @@ export default async function Hello() {
         <div className="flex flex-col mt-20 gap-2">
           <p className='text-secondary-300'>{'// complete o jogo para continuar'}</p>
           <p className='text-secondary-300'>{'// você também pode conferir isso no meu github'}</p>
-          <a href='"https://github.com/EdsonLucasbd/newPortfolio"' className='shiki-theme' dangerouslySetInnerHTML={{ __html: code }} />
+          <a
+            href='"https://github.com/EdsonLucasbd/newPortfolio"'
+            className='shiki-theme-home'
+            dangerouslySetInnerHTML={{ __html: code }}
+          />
         </div>
       </div>
       <div className='relative'>
