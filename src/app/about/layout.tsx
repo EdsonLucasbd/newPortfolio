@@ -1,6 +1,6 @@
 import { File } from '@/components/Explorer/File'
 import { Folder } from '@/components/Explorer/Folder'
-import { Bug, Cog, FileJson, FileType2, Files, GitBranch, Puzzle, Search } from 'lucide-react'
+import { Bug, Cog, FileJson, Files, GitBranch, Puzzle, Search } from 'lucide-react'
 import React from 'react'
 
 export default function BioLayout({
@@ -8,6 +8,7 @@ export default function BioLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <div className='grid grid-cols-editor max-h-full'>
       <div className='flex flex-col justify-between border-r border-primary-100
@@ -32,6 +33,7 @@ export default function BioLayout({
           portfolio
         </span>
         <div className="px-2 pt-4">
+
           <Folder defaultOpen title='bio'>
             <File href='/about/bio'>
               <FileJson size={16} />

@@ -1,4 +1,4 @@
-import { FileType2 } from "lucide-react";
+import { FileCode } from "lucide-react";
 
 export type FileType = {
   title: string;
@@ -6,13 +6,17 @@ export type FileType = {
 };
 
 export const explorerFiles: Record<string, FileType> = {
-  "about/bio": {
-    icon: <FileType2 size={16} />,
-    title: "settings.json",
+  "/about/bio": {
+    icon: <FileCode size={16} />,
+    title: "bio.json",
   },
-  "about/education": {
-    icon: <FileType2 size={16} />,
-    title: "extensions.json",
+  "/about/education": {
+    icon: <FileCode size={16} />,
+    title: "educ.json",
+  },
+  "/about/experience": {
+    icon: <FileCode size={16} />,
+    title: "exp.json",
   },
 };
 

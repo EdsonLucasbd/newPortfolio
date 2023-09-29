@@ -7,7 +7,7 @@ export default async function Hello() {
     theme: 'github-dark',
   })
 
-  const code = theme.codeToHtml('const github = "....."', { lang: 'javascript' })
+  const code = theme.codeToHtml('const github = "https://github.com/EdsonLucasbd/newPortfolio"', { lang: 'javascript' })
 
   return (
     <div className='w-full h-full flex flex-row items-center justify-evenly
@@ -16,13 +16,16 @@ export default async function Hello() {
         <div className="flex flex-col text-secondary-200 gap-2">
           <p className='text-lg'>Olá, me chamo</p>
           <h1 className='text-6xl -indent-1'>Edson Lucas</h1>
-          <p className='text-3xl text-secondary-500'>{'> Front-end developer'}</p>
+          <p className='text-3xl text-secondary-500 flex flex-row gap-1'>
+            <span className='animate-pulse'>{'>'}</span>
+            Front-end developer
+          </p>
         </div>
 
         <div className="flex flex-col mt-20 gap-2">
           <p className='text-secondary-300'>{'// complete o jogo para continuar'}</p>
           <p className='text-secondary-300'>{'// você também pode conferir isso no meu github'}</p>
-          <span className='shiki-theme' dangerouslySetInnerHTML={{ __html: code }} />
+          <a href='"https://github.com/EdsonLucasbd/newPortfolio"' className='shiki-theme' dangerouslySetInnerHTML={{ __html: code }} />
         </div>
       </div>
       <div className='relative'>

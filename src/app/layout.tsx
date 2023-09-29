@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Fira_Code } from 'next/font/google'
 import { Footer } from '@/components/Footer'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
+import { OpenFilesProvider } from '@/hooks/useOpenFile'
 
 const fira = Fira_Code({
   subsets: ['latin'],
@@ -26,9 +27,11 @@ export default function RootLayout({
       <body className={`${fira.className} m-[45px] bg-black `}>
         <main className='bg-primary-200 rounded-lg ring-1 ring-primary-100'>
           <ApolloWrapper>
-            <Header />
-            {children}
-            <Footer />
+            <OpenFilesProvider>
+              <Header />
+              {children}
+              <Footer />
+            </OpenFilesProvider>
           </ApolloWrapper>
         </main>
       </body>
