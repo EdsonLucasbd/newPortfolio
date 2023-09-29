@@ -1,4 +1,5 @@
 import shiki from "shiki"
+import { OpenFilesTabs } from "./FilesTabs"
 
 interface GistContentProps {
   queryUrl: string,
@@ -17,13 +18,14 @@ export async function Content({ queryUrl, lang }: GistContentProps) {
 
   return (
     <div className="flex flex-col">
-      <div className="flex w-full h-10">
-        button
+      <OpenFilesTabs />
+      <div className="bg-primary-100/50">
+        <div
+          className="shiki-theme inset-0 overflow-auto leading-relaxed mb-32"
+          dangerouslySetInnerHTML={{ __html: code }}
+        />
+
       </div>
-      <div
-        className="shiki-theme inset-0 overflow-auto leading-relaxed mb-32"
-        dangerouslySetInnerHTML={{ __html: code }}
-      />
     </div>
   )
 }
