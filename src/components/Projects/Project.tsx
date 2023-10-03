@@ -21,21 +21,27 @@ export const Project = ({ project, link, image, description, index }: ProjectPro
         {`//${project}`}
       </h2>
 
-      <div className='relative flex flex-col w-[370px] h-[315px] rounded-lg
-      ring-1 ring-primary-100'>
-        <Image
-          alt=''
-          src={image!}
-          aria-hidden
-          fill
-          className='h-[145.44px] w-auto'
-        />
-        <div className="flex flex-col items-start">
+      <div className='flex flex-col w-[370px] h-[314.82px] rounded-lg
+        ring-1 ring-primary-100'>
+        <div className="relative w-full h-[145.44px]">
+          <Image
+            alt=''
+            src={image!}
+            aria-hidden
+            fill
+            className='h-[145.44px] w-auto object-cover rounded-tr-lg rounded-tl-lg'
+          />
+        </div>
+
+        <div className="flex flex-col items-start z-10 px-8 py-4 gap-[21.82px]
+        text-secondary-300 border-t border-primary-100">
           {description}
           <Link
             href={link!}
             aria-label={`ir para o projeto ${project}`}
             rel='noopener noreferrer'
+            className='w-[129px] h-[38px] bg-primary-100 rounded-md text-secondary-100
+            flex items-center justify-center'
           >
             view-project
           </Link>
