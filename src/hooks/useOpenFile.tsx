@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { usePathname } from "next/navigation";
 import { explorerFiles, FileType } from "@/components/Explorer";
 

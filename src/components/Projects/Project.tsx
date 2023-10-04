@@ -41,7 +41,8 @@ export const Project = ({ project, link, image, description, index }: ProjectPro
             aria-label={`ir para o projeto ${project}`}
             rel='noopener noreferrer'
             className='w-[129px] h-[38px] bg-primary-100 rounded-md text-secondary-100
-            flex items-center justify-center'
+            flex items-center justify-center outline-none focus:ring-4 focus:ring-secondary-300
+            focus:ring-opacity-40'
           >
             view-project
           </Link>

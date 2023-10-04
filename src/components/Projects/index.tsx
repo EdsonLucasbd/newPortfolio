@@ -20,7 +20,6 @@ export const Projects = async () => {
 
   const data: ProjectType[] = await getProjectData()
 
-
   return (
     <div className='grid grid-cols-2 gap-10'>
       {data.map((project, index) => (
