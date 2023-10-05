@@ -7,20 +7,22 @@ interface CheckBoxProps extends HTMLAttributes<HTMLInputElement> {
   className?: string
   change?: (tech: Technology) => void
   tech: Technology
+  disabled: boolean
 }
 
-export const CheckBox = ({ className, tech }: CheckBoxProps) => {
+export const CheckBox = ({ className, tech, disabled, ...props }: CheckBoxProps) => {
   const { toogleTechnology } = useTechSelection()
 
   return (
     <input
+      {...props}
       type="checkbox"
-      defaultChecked
+      disabled={disabled}
       onChange={() => toogleTechnology(tech)}
       name="tecnology"
       id="next-js"
-      className={twMerge(`
-        relative h-[1.125rem] w-[1.125rem] 
+      className={twMerge(`peer
+        relative h-[1.125rem] w-[1.125rem] disabled:cursor-not-allowed disabled:bg-slate-700
         appearance-none rounded-[0.25rem] border-[0.125rem] border-solid 
         border-secondary-300 outline-none before:pointer-events-none before:absolute 
         before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full 
@@ -44,7 +46,7 @@ export const CheckBox = ({ className, tech }: CheckBoxProps) => {
         checked:focus:after:rotate-45 checked:focus:after:rounded-none 
         checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 
         checked:focus:after:border-t-0 checked:focus:after:border-solid 
-        checked:focus:after:bg-transparent `, className)}
+        checked:focus:after:bg-transparent`, className)}
     />
   )
 }
