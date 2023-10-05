@@ -10,7 +10,7 @@ type ProjectType = {
 
 export const Projects = async () => {
   async function getProjectData() {
-    const res = await fetch('https://gist.github.com/EdsonLucasbd/1eec5369f96797eb2f5cdcce94d959a4/raw/1be53e68561d91cebe157a18a25cc97a620bb0b0/gistfile1.txt')
+    const res = await fetch('https://gist.github.com/EdsonLucasbd/1eec5369f96797eb2f5cdcce94d959a4/raw/6ddbcb342392a997d507efc2c4822c55350aac7e/gistfile1.txt')
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
