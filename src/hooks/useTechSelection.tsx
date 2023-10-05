@@ -2,7 +2,6 @@
 import React, { createContext, useContext, useState } from "react"
 
 export type Technology = {
-  id: number;
   name: string
 }
 
@@ -19,15 +18,13 @@ export const TechSelectionProvider = ({ children }: { children: React.ReactNode 
 
   const toogleTechnology = (tech: Technology) => {
     setSelectedTechnologies((prevSelectedTech) => {
-      if (prevSelectedTech.some((technology) => technology.id === tech.id)) {
-        return prevSelectedTech.filter((technology) => technology.id !== tech.id)
+      if (prevSelectedTech.some((technology) => technology.name === tech.name)) {
+        return prevSelectedTech.filter((technology) => technology.name !== tech.name)
       } else {
         return [...prevSelectedTech, tech];
       }
     })
   }
-
-  console.log('selectedTechnologies', selectedTechnologies)
 
   const clearSelection = () => {
     setSelectedTechnologies([])
