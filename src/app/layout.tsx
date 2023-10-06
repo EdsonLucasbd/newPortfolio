@@ -6,6 +6,7 @@ import { Fira_Code } from 'next/font/google'
 import { Footer } from '@/components/Footer'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
 import { OpenFilesProvider } from '@/hooks/useOpenFile'
+import { TechSelectionProvider } from '@/hooks/useTechSelection'
 
 const fira = Fira_Code({
   subsets: ['latin'],
@@ -29,7 +30,9 @@ export default function RootLayout({
           <ApolloWrapper>
             <OpenFilesProvider>
               <Header />
-              {children}
+              <TechSelectionProvider>
+                {children}
+              </TechSelectionProvider>
               <Footer />
             </OpenFilesProvider>
           </ApolloWrapper>

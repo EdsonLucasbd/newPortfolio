@@ -28,7 +28,7 @@ export const Header = () => {
 
   return (
     <div className='w-full h-14 flex flex-row
-    text-secondary-300 border-b border-primary-100'>
+    text-secondary-300 border-b border-primary-100 bg-primary-300'>
       <span className='py-[17px] pl-[22px] pr-24'>edson-lucas</span>
       {options.map((option) => (
         <Link

@@ -1,38 +1,23 @@
 "use client"
 import React, { createContext, useContext, useState } from "react"
 
-export type Technology = {
-  name: string
-}
-
 type TechSelectionState = {
-  selectedTechnologies: Technology[];
-  toogleTechnology: (tech: Technology) => void;
-  clearSelection: () => void
+  selectedTechnology: string;
+  toogleTechnology: (tech: string) => void;
 }
 
 const TechSelectionContext = createContext<TechSelectionState | undefined>(undefined)
 
 export const TechSelectionProvider = ({ children }: { children: React.ReactNode }) => {
-  const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([])
+  const [selectedTechnology, setSelectedselectedTechnology] = useState<string>('nextjs')
 
-  const toogleTechnology = (tech: Technology) => {
-    setSelectedTechnologies((prevSelectedTech) => {
-      if (prevSelectedTech.some((technology) => technology.name === tech.name)) {
-        return prevSelectedTech.filter((technology) => technology.name !== tech.name)
-      } else {
-        return [...prevSelectedTech, tech];
-      }
-    })
-  }
-
-  const clearSelection = () => {
-    setSelectedTechnologies([])
+  const toogleTechnology = (tech: string) => {
+    setSelectedselectedTechnology(tech)
   }
 
   return (
     <TechSelectionContext.Provider
-      value={{ selectedTechnologies, toogleTechnology, clearSelection }}
+      value={{ selectedTechnology, toogleTechnology }}
     >
       {children}
     </TechSelectionContext.Provider>

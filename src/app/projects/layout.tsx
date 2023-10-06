@@ -11,9 +11,9 @@ export default function BioLayout({
 }) {
 
   return (
-    <div className='grid grid-cols-editor max-h-full'>
-      <div className='flex flex-col justify-between border-r border-primary-100
-      divide-y divide-primary-100'>
+    <div className='grid grid-cols-projects max-h-full'>
+      <div className='flex flex-col justify-between border-r border-primary-200
+      divide-y divide-primary-100 bg-primary-300'>
         <div className='flex flex-col space-y-4 first:mt-6'>
           <Files className='h-12 p-2 w-auto border-l-2 
             border-secondary-100 text-secondary-100'
@@ -25,31 +25,7 @@ export default function BioLayout({
         </div>
         <Cog className='text-primary-100 w-auto h-12 p-2' />
       </div>
-
-
-      <TechSelectionProvider>
-        <aside className='flex flex-col divide-y divide-primary-100 border-r border-primary-100'>
-          <span className='my-2 mx-4 flex flex-row gap-3 text-secondary-200 
-          text-sm'>
-            <i className="ri-arrow-down-s-fill" />
-            projects
-          </span>
-          <div className="pl-[22px] pt-4">
-
-            <label className="flex gap-[10px] items-center">
-              <CheckBox
-                tech={{ name: 'nextjs' }}
-                defaultChecked
-                aria-disabled
-                disabled
-              />
-              <NextJsIcon className='text-2xl text-secondary-300 peer-disabled:text-secondary-300/50' />
-              <span className=' text-secondary-200 peer-disabled:text-secondary-300'>Next.JS</span>
-            </label>
-          </div>
-        </aside>
-        {children}
-      </TechSelectionProvider>
+      {children}
     </div>
   )
 }

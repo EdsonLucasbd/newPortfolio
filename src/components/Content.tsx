@@ -19,7 +19,7 @@ export async function Content({ queryUrl, lang }: GistContentProps) {
   return (
     <div className="flex flex-col">
       <OpenFilesTabs />
-      <div className="bg-primary-100/50">
+      <div>
         <div
           className="shiki-theme inset-0 overflow-auto leading-relaxed mb-32"
           dangerouslySetInnerHTML={{ __html: code }}
