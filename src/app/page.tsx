@@ -32,14 +32,14 @@ export default async function Hello() {
           />
         </div>
       </div>
-      <div className='relative'>
-        <span className='absolute top-0 flex blur-3xl bg-accent-200 w-[400px] 
-          h-[200px] rotate-12 rounded-full'
-        />
-        <span className='absolute bottom-0 right-0 flex blur-3xl bg-secondary-500 w-[400px] 
-          h-[200px] -rotate-12 rounded-full'
-        />
-        <Image className='z-10 backdrop-blur-0' src='/Snake-Game.png' alt='' width={450} height={475} />
+      <div className='h-fit'>
+        {/* <span className='absolute top-0 flex blur-3xl bg-accent-200 w-[400px] 
+            h-[200px] rotate-12 rounded-full'
+          />
+          <span className='absolute bottom-0 right-0 flex blur-3xl bg-secondary-500 w-[400px] 
+            h-[200px] -rotate-12 rounded-full'
+          /> */}
+        <iframe className='w-[28.125rem] h-[420px] rounded-lg' src='https://js-snake-sigma.vercel.app/' title='javascript snake game' height={475} />
       </div>
     </div>
   )

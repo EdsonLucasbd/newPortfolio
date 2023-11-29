@@ -15,6 +15,13 @@ interface DrawSnakeProps {
     y: number
   }[]
 }
+interface DrawSnakeProps2 {
+  ctx: CanvasRenderingContext2D | null | undefined,
+  snake: [
+    x: number,
+    y: number
+  ]
+}
 
 interface DrawFoodProps {
   ctx: CanvasRenderingContext2D | null | undefined,
@@ -43,7 +50,7 @@ interface CheckEatProps {
 
 export type DirectionMoviment = 'left' | 'right' | 'up' | 'down' | undefined
 
-const GRID_SIZE = 20
+export const GRID_SIZE = 20
 export const DEFAULT_FOOD: {
   x: number | undefined;
   y: number | undefined;
@@ -55,7 +62,13 @@ export const DEFAULT_FOOD: {
 }
 
 export const DEFAULT_SNAKE: { x: number; y: number }[] = [{x: 200, y: 300}]
+export const DEFAULT_SNAKE2: [
+  x: number,
+  y: number
+] = [8, 7]
+
 export const DEFAULT_SPEED = 200
+
 export const eatEffect: HTMLAudioElement = new Audio('/assets/eat_effect.mp3')
 
 export function isCollisionWithFood({foodPosition, snake}: CollisionWithFoodProps) {
@@ -90,6 +103,7 @@ export function moveSnake(
       break;
   }
 }
+
 
 export function checkCollision(
   snakeSegments: { x: number; y: number }[],

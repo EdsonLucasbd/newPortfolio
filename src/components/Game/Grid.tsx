@@ -2,9 +2,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {
   DEFAULT_FOOD, DEFAULT_SNAKE, DEFAULT_SPEED, DirectionMoviment, checkEat,
-  checkCollision, drawFood, drawSnake, moveSnake, randomPosition
+  checkCollision, drawFood, drawSnake, moveSnake
 } from '@/utils/snakeGameUtils';
-import { useInterval } from '@/hooks/useInterval';
 
 interface DrawGridProps {
   ctx: CanvasRenderingContext2D | null | undefined,
@@ -14,8 +13,7 @@ interface DrawGridProps {
 export const Grid = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const scoreRef = useRef<HTMLSpanElement>(null)
-  const gameOverRef = useRef<HTMLDivElement>(null)
-  const [snakeSegments, setSnakeSegments] = useState(DEFAULT_SNAKE)
+  const [snake, setSnake] = useState(DEFAULT_SNAKE)
   const [food, setFood] = useState(DEFAULT_FOOD);
   const [direction, setDirection] = useState<DirectionMoviment>()
   const [speed, setSpeed] = useState<number | null>(null)
@@ -23,7 +21,7 @@ export const Grid = () => {
   const [isVisible, setIsVisible] = useState(true)
 
   function startGame() {
-    setSnakeSegments(DEFAULT_SNAKE)
+    setSnake(DEFAULT_SNAKE)
     setSpeed(DEFAULT_SPEED)
     setFood(DEFAULT_FOOD)
     setGameOver(false)
@@ -63,7 +61,14 @@ export const Grid = () => {
     }
   }
 
-  function handleKeyPress({ key }: KeyboardEvent) {
+  function handleKeyPress(event: KeyboardEvent) {
+    const { key } = event
+
+    if (event.repeat) {
+      return
+    }
+
+    console.log('key', key)
     if (key === 'ArrowRight' && direction !== 'left') {
       setDirection('right')
     }
@@ -79,44 +84,59 @@ export const Grid = () => {
   }
 
   const gameLoop = () => {
-    console.log('start')
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
 
-    ctx?.clearRect(0, 0, 400, 600)
+    if (!canvas || !ctx) {
+      return;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawGrid({ canvas, ctx })
     drawFood({ ctx, food })
-    moveSnake(snakeSegments, direction)
-    drawSnake({ ctx, snake: snakeSegments })
-    checkEat({ snakeSegments, food, setFood, setSpeed, score: scoreRef })
-    if (checkCollision(snakeSegments)) {
+    drawSnake({ ctx, snake: snake })
+    moveSnake(snake, direction)
+    checkEat({ snakeSegments: snake, food, setFood, setSpeed, score: scoreRef })
+    if (checkCollision(snake)) {
       endGame()
+      return
     }
+
   }
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
+  let gameInterval: NodeJS.Timeout | null = null
 
-    ctx?.clearRect(0, 0, 400, 600)
-    drawGrid({ canvas, ctx })
-    drawFood({ ctx, food })
-    drawSnake({ ctx, snake: snakeSegments })
+  // useEffect(() => {
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [snakeSegments, food])
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   gameInterval = setInterval(gameLoop, 300)
+
+  //   return () => {
+  //     if (gameInterval) {
+  //       clearInterval(gameInterval);
+  //     }
+  //   };
+
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [snake, direction])
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyPress)
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    gameInterval = setInterval(gameLoop, 300)
+
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
+      if (gameInterval) {
+        clearInterval(gameInterval);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [direction, setDirection])
 
 
-  useInterval(() => gameLoop(), speed)
+  // useInterval(() => gameLoop(), speed)
 
   return (
     <>
@@ -124,7 +144,8 @@ export const Grid = () => {
         ref={canvasRef}
         className={`absolute w-[238.69px] h-[405.32px] bg-primary-200/80 rounded-lg
         left-8 shadow-[1px_5px_11px_inset_rgba(02,18,27,7.1)]`}
-        width={400} height={600}
+        width={400}
+        height={600}
       >
       </canvas>
       <button
@@ -142,7 +163,7 @@ export const Grid = () => {
           00
         </span>
       </p>
-      <div ref={gameOverRef} className='z-10 data-[show="false"]:hidden 
+      <div className='z-10 data-[show="false"]:hidden 
         data-[show="true"]:flex data-[show="true"]:flex-col items-center justify-center
         w-[400px] gap-3'
         data-show={gameOver}
