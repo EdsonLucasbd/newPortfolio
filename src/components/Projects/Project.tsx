@@ -42,7 +42,7 @@ export const Project = ({ project, link, image, description, index }: ProjectPro
             rel='noopener noreferrer'
             className='w-[129px] h-[38px] bg-primary-100 rounded-md text-secondary-100
             flex items-center justify-center outline-none focus:ring-4 focus:ring-secondary-300
-            focus:ring-opacity-40'
+            focus:ring-opacity-40 hover:bg-primary-400 transition-colors ease-in-out duration-200'
           >
             view-project
           </Link>

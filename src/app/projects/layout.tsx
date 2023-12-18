@@ -1,6 +1,3 @@
-import { NextJsIcon } from '@/components/NextjsIcon'
-import { CheckBox } from '@/components/Technologies/CheckBox'
-import { TechSelectionProvider } from '@/hooks/useTechSelection'
 import { Bug, Cog, Files, GitBranch, Puzzle, Search } from 'lucide-react'
 import React from 'react'
 
