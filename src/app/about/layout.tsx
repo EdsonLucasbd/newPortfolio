@@ -1,6 +1,6 @@
 import { File } from '@/components/Explorer/File'
 import { Folder } from '@/components/Explorer/Folder'
-import { Bug, Cog, FileJson, Files, GitBranch, Puzzle, Search } from 'lucide-react'
+import { Bug, Cog, FileJson, Files, GitBranch, Puzzle, Search, Download } from 'lucide-react'
 import React from 'react'
 
 export default function BioLayout({
@@ -52,6 +52,22 @@ export default function BioLayout({
               exp.json
             </File>
           </Folder>
+
+          <a
+            href="/EdsonLucas-curriculo.pdf"
+            role='button'
+            aria-label='Clique para baixar o meu curriculo em PDF.'
+            title='Baixar meu curriculo'
+            download
+            className='flex items-center gap-2 px-2 py-1 w-full 
+              border border-transparent text-secondary-300 data-[open=true]:text-secondary-100 
+              hover:bg-primary-100 hover:text-secondary-100 
+              focus:bg-primary-100 focus:border-primary-100 focus:text-secondary-100
+              transition-colors ease-in-out duration-200'
+          >
+            <Download size={16} />
+            curriculo
+          </a>
         </div>
       </aside>
       {children}
