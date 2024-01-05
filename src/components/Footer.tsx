@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='flex flex-row w-full h-[49.74px] text-secondary-300 gap-1
+    <div className='hidden md:flex flex-row w-full h-[49.74px] text-secondary-300 gap-1
     items-center justify-end py-[14px] border-t border-primary-100 px-[22px]
     bg-primary-300'>
       <a href="https://github.com/EdsonLucasbd" className='flex flex-row gap-1

@@ -21,3 +21,8 @@ code {
   color: #607B96;
 }
 
+@media (max-width: 764px) {
+  .shiki-theme-home code {
+    text-wrap: wrap;
+  }
+}
