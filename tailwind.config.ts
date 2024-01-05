@@ -71,8 +71,7 @@ const config: Config = {
       },
       gridTemplateColumns: {
         editor: '3.5rem 10.55rem 1fr',
-        projects: '3.5rem 1fr'
-        
+        projects: '3.5rem 1fr',
       },
     },
   },

@@ -25,7 +25,7 @@ export function OpenFilesTabs() {
           <div
             key={index}
             data-active={isActive}
-            className="group h-full flex items-center gap-[6px] pl-[10px] 
+            className="group w-full md:w-fit h-full flex items-center gap-[6px] pl-[10px] 
               hover:bg-[#817c9c14] hover:text-secondary-100 
               data-[active=true]:bg-[#817c9c14] data-[active=true]:text-secondary-200"
           >

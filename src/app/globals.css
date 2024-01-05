@@ -22,7 +22,12 @@ code {
 }
 
 @media (max-width: 764px) {
-  .shiki-theme-home code {
+  .shiki-theme-home code, 
+  .shiki-theme code {
     text-wrap: wrap;
+  }
+  .shiki-theme code {
+    font-size: small;
+    text-align: right;
   }
 }

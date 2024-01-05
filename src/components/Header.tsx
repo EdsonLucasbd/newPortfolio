@@ -58,7 +58,8 @@ export const Header = () => {
       {!isMobile ? (
 
         <Link href='/' className='py-[17px] px-[31px] border-l border-primary-100 ml-auto
-        hover:text-secondary-200 transition-colors ease-in-out duration-200'
+        hover:text-secondary-200 transition-colors ease-in-out duration-200
+        aria-[current="true"]:border-b-2 aria-[current="true"]:border-b-accent-100'
         >
           _contact-me
         </Link>
@@ -90,7 +91,10 @@ export const Header = () => {
                     key={option.title}
                     href={option.link}
                     className='first:border-b-0 last:border-t-0 border-y py-[17px] px-[31px] even:border-l even:border-r border-primary-100
-                  hover:text-secondary-200 transition-colors ease-in-out duration-200'
+                  hover:text-secondary-200 transition-colors ease-in-out duration-200
+                  aria-[current="true"]:text-secondary-200'
+                    aria-current={regex.test(option.link) || path.indexOf(option.reference) !== -1}
+                    onClick={() => setIsOpen(!isOpen)}
                   >
                     {option.title}
                   </Link>
