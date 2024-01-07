@@ -3,10 +3,11 @@ import { OpenFilesTabs } from "./FilesTabs"
 
 interface GistContentProps {
   queryUrl: string,
-  lang: shiki.Lang
+  lang: shiki.Lang,
+  device?: "mobile" | "normal"
 }
 
-export async function Content({ queryUrl, lang }: GistContentProps) {
+export async function Content({ queryUrl, lang, device }: GistContentProps) {
   const settingsResponse = await fetch(queryUrl)
   const settings = await settingsResponse.text()
 
@@ -21,7 +22,7 @@ export async function Content({ queryUrl, lang }: GistContentProps) {
       <OpenFilesTabs />
       <div>
         <div
-          className="shiki-theme inset-0 overflow-auto leading-relaxed mb-32"
+          className={`${device && device === "mobile" ? 'shiki-theme-mobile' : 'shiki-theme'} inset-0 overflow-auto leading-relaxed mb-32`}
           dangerouslySetInnerHTML={{ __html: code }}
         />
 

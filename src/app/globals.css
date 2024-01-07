@@ -26,8 +26,13 @@ code {
   .shiki-theme code {
     text-wrap: wrap;
   }
-  .shiki-theme code {
-    font-size: small;
-    text-align: right;
+
+  .shiki-theme {
+    padding: 1rem;
+    font-size: smaller;
+  }
+
+  .shiki-theme code .line::before {
+    content: none;
   }
 }
