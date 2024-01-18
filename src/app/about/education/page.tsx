@@ -6,7 +6,7 @@ export const metadata = {
 
 export default async function Education() {
   return <Content
-    queryUrl='https://gist.github.com/EdsonLucasbd/becd1cd08abfae431980e5c0339f81b4/raw/17809b378bca008d4258f5c1b3a88728973d9516/gistfile1.txt'
+    queryUrl='https://gist.githubusercontent.com/EdsonLucasbd/becd1cd08abfae431980e5c0339f81b4/raw/ac7cd09cfc3f861a1f26cec68f433dfe4be7dd70/gistfile1.txt'
     lang='javascript'
   />
 }

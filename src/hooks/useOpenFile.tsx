@@ -26,8 +26,6 @@ export function OpenFilesProvider({ children }: { children: React.ReactNode }) {
     return [];
   });
 
-  const files = explorerFiles
-
   const markFileAsOpen = (file: string) => {
     if (openFiles.includes(file)) {
       return;

@@ -5,7 +5,6 @@ import type { Metadata } from 'next'
 import { Fira_Code, Press_Start_2P } from 'next/font/google'
 import { Footer } from '@/components/Footer'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
-import { OpenFilesProvider } from '@/hooks/useOpenFile'
 import { TechSelectionProvider } from '@/hooks/useTechSelection'
 
 const fira = Fira_Code({
@@ -34,13 +33,11 @@ export default function RootLayout({
       <body className={`${fira.className} ${pressStart2P.variable} m-[15px] md:m-[45px] bg-black `}>
         <main className='bg-primary-200 rounded-lg ring-1 ring-primary-100'>
           <ApolloWrapper>
-            <OpenFilesProvider>
-              <Header />
-              <TechSelectionProvider>
-                {children}
-              </TechSelectionProvider>
-              <Footer />
-            </OpenFilesProvider>
+            <Header />
+            <TechSelectionProvider>
+              {children}
+            </TechSelectionProvider>
+            <Footer />
           </ApolloWrapper>
         </main>
       </body>

@@ -1,5 +1,4 @@
 import shiki from "shiki"
-import { OpenFilesTabs } from "./FilesTabs"
 
 interface GistContentProps {
   queryUrl: string,
@@ -19,7 +18,6 @@ export async function Content({ queryUrl, lang, device }: GistContentProps) {
 
   return (
     <div className="flex flex-col">
-      <OpenFilesTabs />
       <div>
         <div
           className={`${device && device === "mobile" ? 'shiki-theme-mobile' : 'shiki-theme'} inset-0 overflow-auto leading-relaxed mb-32`}

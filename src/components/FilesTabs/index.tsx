@@ -29,7 +29,7 @@ export function OpenFilesTabs() {
               hover:bg-[#817c9c14] hover:text-secondary-100 
               data-[active=true]:bg-[#817c9c14] data-[active=true]:text-secondary-200"
           >
-            <Link href={openFile} className="flex gap-[6px] items-center ">
+            <Link href={openFile} className="flex gap-[6px] items-center">
               <span
                 className="text-secondary-300 group-data-[active=true]:text-secondary-200">{file.icon}</span>
               <span

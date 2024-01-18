@@ -1,6 +1,7 @@
-import { File } from '@/components/Explorer/File'
-import { Folder } from '@/components/Explorer/Folder'
-import { Bug, Cog, FileJson, Files, GitBranch, Puzzle, Search, Download } from 'lucide-react'
+import { Explorer } from '@/components/Explorer'
+import { OpenFilesTabs } from '@/components/FilesTabs'
+import { OpenFilesProvider } from '@/hooks/useOpenFile'
+import { Bug, Cog, Files, GitBranch, Puzzle, Search } from 'lucide-react'
 import React from 'react'
 
 export default function BioLayout({
@@ -25,52 +26,20 @@ export default function BioLayout({
         <Cog className='text-primary-100 w-auto h-12 p-2' />
       </div>
 
-
-      <aside className='flex flex-col divide-y divide-primary-100'>
-        <span className='my-2 mx-4 flex flex-row gap-3 text-secondary-200 
-          text-sm'>
-          <i className="ri-arrow-down-s-fill" />
-          portfolio
-        </span>
-        <div className="px-2 pt-4">
-
-          <Folder defaultOpen title='bio'>
-            <File href='/about/bio'>
-              <FileJson size={16} />
-              bio.json
-            </File>
-          </Folder>
-          <Folder title='education' color='text-accent-300'>
-            <File href='/about/education'>
-              <FileJson size={16} />
-              educ.json
-            </File>
-          </Folder>
-          <Folder title='experience' color='text-accent-400'>
-            <File href='/about/experience'>
-              <FileJson size={16} />
-              exp.json
-            </File>
-          </Folder>
-
-          <a
-            href="/EdsonLucas-curriculo.pdf"
-            role='button'
-            aria-label='Clique para baixar o meu curriculo em PDF.'
-            title='Baixar meu curriculo'
-            download
-            className='flex items-center gap-2 px-2 py-1 w-full 
-              border border-transparent text-secondary-300 data-[open=true]:text-secondary-100 
-              hover:bg-primary-100 hover:text-secondary-100 
-              focus:bg-primary-100 focus:border-primary-100 focus:text-secondary-100
-              transition-colors ease-in-out duration-200'
-          >
-            <Download size={16} />
-            curriculo
-          </a>
+      <OpenFilesProvider>
+        <aside className='flex flex-col divide-y divide-primary-100'>
+          <span className='my-2 mx-4 flex flex-row gap-3 text-secondary-200 
+            text-sm'>
+            <i className="ri-arrow-down-s-fill" />
+            portfolio
+          </span>
+          <Explorer />
+        </aside>
+        <div className="h-full relative flex flex-col">
+          <OpenFilesTabs />
+          <div className="h-full relative">{children}</div>
         </div>
-      </aside>
-      {children}
+      </OpenFilesProvider>
     </div>
   )
 }
