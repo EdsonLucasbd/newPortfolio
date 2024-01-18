@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { Dispatch, SetStateAction, createContext, useContext, useState } from "react";
 import { usePathname } from "next/navigation";
 import { explorerFiles, FileType } from "@/components/Explorer";
 
@@ -8,6 +8,7 @@ type OpenFilesContextProps = {
   markFileAsOpen: (tab: string) => void;
   closeFile: (tabIndex: number) => void;
   currentOpenFile: () => FileType | null;
+  setOpenFiles: Dispatch<SetStateAction<string[]>>
 };
 
 const OpenFilesContext = createContext({} as OpenFilesContextProps);
@@ -49,7 +50,7 @@ export function OpenFilesProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <OpenFilesContext.Provider
-      value={{ openFiles, markFileAsOpen, closeFile, currentOpenFile }}
+      value={{ openFiles, markFileAsOpen, closeFile, currentOpenFile, setOpenFiles }}
     >
       {children}
     </OpenFilesContext.Provider>
