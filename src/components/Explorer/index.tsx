@@ -1,6 +1,7 @@
-import { Download, FileCode, FileJson } from "lucide-react";
+import { FileCode, FileJson } from "lucide-react";
 import { Folder } from "./Folder";
 import { File } from "./File";
+import { ResumeMenu } from "../ResumeMenu";
 
 export type FileType = {
   title: string;
@@ -45,21 +46,7 @@ export function Explorer() {
         </File>
       </Folder>
 
-      <a
-        href="/EdsonLucas-curriculo.pdf"
-        role='button'
-        aria-label='Clique para baixar o meu curriculo em PDF.'
-        title='Baixar meu curriculo'
-        download
-        className='flex items-center gap-2 px-2 py-1 w-full 
-              border border-transparent text-secondary-300 data-[open=true]:text-secondary-100 
-              hover:bg-primary-100 hover:text-secondary-100 
-              focus:bg-primary-100 focus:border-primary-100 focus:text-secondary-100
-              transition-colors ease-in-out duration-200'
-      >
-        <Download size={16} />
-        curriculo
-      </a>
+      <ResumeMenu />
     </div>
   )
 }

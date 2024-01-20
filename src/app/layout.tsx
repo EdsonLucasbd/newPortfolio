@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fira.className} ${pressStart2P.variable} m-[15px] md:m-[45px] bg-black `}>
+      <body className={`${fira.className} ${pressStart2P.variable} m-[15px] md:m-[45px] p-0 bg-black `}>
         <main className='bg-primary-200 rounded-lg ring-1 ring-primary-100'>
           <ApolloWrapper>
             <Header />

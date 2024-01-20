@@ -42,6 +42,7 @@ const config: Config = {
         "fade-in-bottom-soft": "fade-in-bottom-soft 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)    both",
         "flip-in-hor-top": "flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)   both",
         slideDownAndFade: 'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
       },
       keyframes: {
         "fade-in-bottom-soft": {
@@ -66,6 +67,10 @@ const config: Config = {
         },
         slideDownAndFade: {
           from: { opacity: "0", transform: 'translateY(-2px)' },
+          to: { opacity: "1", transform: 'translateY(0)' },
+        },
+        slideUpAndFade: {
+          from: { opacity: "0", transform: 'translateY(2px)' },
           to: { opacity: "1", transform: 'translateY(0)' },
         },
       },
