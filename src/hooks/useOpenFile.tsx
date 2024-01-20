@@ -32,7 +32,11 @@ export function OpenFilesProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
-    setOpenFiles([...openFiles, file]);
+    if (openFiles.length < 2) {
+      setOpenFiles([...openFiles, file]);
+    } else if (openFiles.length === 2) {
+      setOpenFiles([file]);
+    }
   };
 
   const closeFile = (fileIndex: number) => {
