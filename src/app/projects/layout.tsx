@@ -8,8 +8,8 @@ export default function BioLayout({
 }) {
 
   return (
-    <div className='grid grid-cols-projects max-h-full'>
-      <div className='flex flex-col justify-between border-r border-primary-200
+    <div className='flex flex-col gap-12 md:grid md:grid-cols-projects max-h-full'>
+      <div className='hidden md:flex flex-col justify-between border-r border-primary-200
       divide-y divide-primary-100 bg-primary-300'>
         <div className='flex flex-col space-y-4 first:mt-6'>
           <Files className='h-12 p-2 w-auto border-l-2 

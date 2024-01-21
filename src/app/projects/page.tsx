@@ -7,7 +7,7 @@ import { useTechSelection } from '@/hooks/useTechSelection'
 export default function Projects() {
 
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-col md:flex-row'>
       <aside className='flex flex-col divide-y divide-primary-100'>
         <span className='my-2 mx-4 flex flex-row gap-3 text-secondary-200 
           text-sm'>
@@ -26,7 +26,7 @@ export default function Projects() {
           </label>
         </div>
       </aside>
-      <div className='mx-[127.65px] my-20 w-full'>
+      <div className='mx-6 md:mx-[127.65px] my-28 md:my-20 w-full'>
         <ProjectsList />
       </div>
     </div>
