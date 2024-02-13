@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="https://www.datocms-assets.com/66381/1655646077-el.png" alt="portfólio logomarca" />
+  <img src="https://www.datocms-assets.com/66381/1707797290-el-logo-2.png" alt="portfólio logomarca" />
 
   &#xa0;
 
