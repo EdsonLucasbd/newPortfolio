@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center" id="top"> 
+  <img src="https://www.datocms-assets.com/66381/1655646077-el.png" alt="portfólio logomarca" />
 
-## Getting Started
+  &#xa0;
 
-First, run the development server:
+  <!-- <a href="https://new_portfolio.netlify.app">Demo</a> -->
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<h1 align="center">Edson Lucas | Portfólio</h1>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8">
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8">
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8">
 
-## Learn More
+  <img alt="License" src="https://img.shields.io/github/license/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8">
 
-To learn more about Next.js, take a look at the following resources:
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8" /> -->
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8" /> -->
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/EdsonLucasbd/edsonlucas_portfolio?color=56BEB8" /> -->
+</p>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="center">
+  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#memo-licença">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/edsonlucasbd" target="_blank">Autor</a>
+</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<br>
+
+## :dart: Sobre ##
+
+Meu site pessoal. 
+Uso para praticar tecnologias que estou estudando e também expor os projetos que desenvolvo.
+
+## :rocket: Tecnologias ##
+
+As seguintes tecnologias foram usadas nesse projeto:
+
+- [Nextjs](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Github Gist](https://gist.github.com/)
+- [Tailwind css](https://tailwindcss.com/)
+
+
+## :memo: Licença ##
+
+Este projeto está sob licença do MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](LICENSE).
+
+
+Feito com :heart: por <a href="https://github.com/edsonlucasbd" target="_blank">Edson Lucas</a>
+
+&#xa0;
+
+<a href="#top">Voltar ao início</a>
