@@ -1,4 +1,5 @@
 import { Header } from '@/components/Header'
+import Head from 'next/head'
 import './globals.css'
 import 'remixicon/fonts/remixicon.css'
 import type { Metadata } from 'next'
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   description: 'Portfólio',
 }
 
+
 export default function RootLayout({
   children,
 }: {
@@ -30,6 +32,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7594484605572689"
+          crossOrigin="anonymous">
+        </script>
+      </Head>
       <body className={`${fira.className} ${pressStart2P.variable} m-[15px] md:m-[45px] p-0 bg-black `}>
         <main className='bg-primary-200 rounded-lg ring-1 ring-primary-100'>
           <ApolloWrapper>
