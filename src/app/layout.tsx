@@ -7,6 +7,7 @@ import { Fira_Code, Press_Start_2P } from 'next/font/google'
 import { Footer } from '@/components/Footer'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
 import { TechSelectionProvider } from '@/hooks/useTechSelection'
+import Script from 'next/script'
 
 const fira = Fira_Code({
   subsets: ['latin'],
@@ -22,10 +23,6 @@ const pressStart2P = Press_Start_2P({
 export const metadata: Metadata = {
   title: 'Edson Lucas',
   description: 'Portfólio',
-  other: {
-    name: "google-adsense-account",
-    content: "ca-pub-7594484605572689"
-  }
 }
 
 
@@ -36,6 +33,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+        strategy="lazyOnload"
+        crossOrigin="anonymous"
+      />
       <body className={`${fira.className} ${pressStart2P.variable} m-[15px] md:m-[45px] p-0 bg-black `}>
         <main className='bg-primary-200 rounded-lg ring-1 ring-primary-100'>
           <ApolloWrapper>
